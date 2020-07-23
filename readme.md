@@ -1,8 +1,8 @@
-1728*972
+>1728*972
 
-7z.dll
+>7z.dll
 
-虚拟机VMware 15 激活密钥许可证：
+>虚拟机VMware 15 激活密钥许可证：
 
 UY758-0RXEQ-M81WP-8ZM7Z-Y3HDA
 
