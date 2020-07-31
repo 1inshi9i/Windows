@@ -1,0 +1,237 @@
+# elementaryOS Apps and Configs
+This guide has been updated for elementaryOS v5.0+.
+
+### Enbale PPA support
+```
+sudo apt-get update
+sudo apt-get -y install software-properties-common
+```
+
+### Install original plank dock
+Elementary OS comes with a patched version of plank dock with limited features
+```
+sudo add-apt-repository -y ppa:ricotz/docky
+sudo apt-get install -y plank
+# configure
+plank --preferences
+```
+
+### Plank addons
+* [Themes](https://github.com/fsvh/plank-themes),[Themes 2](https://github.com/KenHarkey/plank-themes)
+* [auto plank](https://github.com/olback/autoplank)
+* [separator](https://github.com/KeepWannabe/PlankZer)
+
+
+### Elementary tweaks 
+```
+sudo add-apt-repository -y ppa:philip.scott/elementary-tweaks 
+sudo apt-get install -y elementary-tweaks
+```
+
+### 7Z, RAR file support to [File Roller](https://help.ubuntu.com/community/File%20Roller)
+
+```bash
+sudo apt-get install -y rar unrar p7zip-full p7zip-rar
+```
+
+### Task manager
+```
+sudo apt-get install -y gnome-system-monitor htop
+```
+
+### Google Chrome Web Browser 
+* [Download Page](https://www.google.com/chrome/browser/desktop/index.html), Direct link to [Stable](https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb) and [Beta](https://dl.google.com/linux/direct/google-chrome-beta_current_amd64.deb)
+OR
+
+```
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+sudo apt-get update
+sudo apt-get install -y google-chrome-stable
+```
+
+### VLC Media Player
+```
+sudo apt-get install -y vlc
+```
+
+### [Kingsoft WPS Office](http://linux.wps.com/) (~80MB download)
+
+### [Libre Office](https://www.libreoffice.org/download/download/) (~180 MB download)
+```
+sudo add-apt-repository -y ppa:libreoffice/ppa
+sudo apt-get install -y libreoffice
+```
+
+### [TLP](http://linrunner.de/en/tlp/tlp.html) Laptop battery saver
+```
+sudo add-apt-repository -y ppa:linrunner/tlp
+sudo apt-get install -y tlp tlp-rdw
+sudo tlp start
+```
+* TLP saves its configs to ```/etc/default/tlp```, advanced users can go and adjust settings there.
+* For example; un-comment this line ```DEVICES_TO_DISABLE_ON_STARTUP```
+
+
+### [GIMP](https://www.gimp.org/downloads/) Image editor
+```
+sudo add-apt-repository -y ppa:otto-kesselgulasch/gimp
+sudo apt-get install -y gimp
+```
+
+
+### [xfburn](https://apps.ubuntu.com/cat/applications/precise/xfburn/) - CD and DVD burning application
+```
+sudo apt-get install -y xfburn
+```
+
+*xfburn does not support multi-session disks*
+
+
+### [dConf-Tools](https://apps.ubuntu.com/cat/applications/saucy/dconf-tools/)
+```bash
+sudo apt-get install -y dconf-tools
+```
+
+### [Disk usage analyzer](https://apps.ubuntu.com/cat/applications/baobab/)
+```
+sudo apt install -y baobab
+```
+
+### [gParted](http://gparted.org/download.php)
+```
+sudo apt-get install -y gparted
+```
+
+### ISO Master
+```
+sudo apt-get install -y isomaster
+```
+
+### [BleachBit](http://bleachbit.sourceforge.net/download/linux)
+```
+sudo apt-get install -y bleachbit
+```
+
+### [uGet](http://ugetdm.com/downloads-ubuntu) Download Manager
+```
+sudo add-apt-repository -y ppa:plushuang-tw/uget-stable
+sudo apt install -y aria2 uget
+```
+
+### [unetbootin](http://unetbootin.github.io/linux_download.html)
+```
+sudo add-apt-repository -y ppa:gezakovacs/ppa
+sudo apt-get install -y unetbootin
+```
+
+### [WoeUSB](http://www.webupd8.org/2017/06/tool-to-create-bootable-windows-usb.html)
+```
+sudo add-apt-repository -y ppa:nilarimogard/webupd8
+sudo apt install -y woeusb
+```
+
+### Spotify desktop app
+* https://www.spotify.com/int/download/linux/
+
+### gDebi
+```
+sudo apt-get install -y gdebi
+```
+
+### Synaptic Package Manager
+```
+sudo apt-get install -y synaptic
+```
+
+### E4defrag (Defrag ext4 partations)
+```
+# check if your first partation needs defragmentation
+sudo e4defrag -c /dev/sda1 
+```
+
+### [Ubuntu Restricted extras](https://packages.ubuntu.com/xenial/ubuntu-restricted-extras)
+```
+# Full install
+sudo apt-get install -y ubuntu-restricted-extras
+```
+
+```
+# Selected install - Codecs only
+sudo apt-get install -y gstreamer1.0-fluendo-mp3 gstreamer1.0-libav gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly libavcodec-extra
+```
+
+### [Grub Customizer](https://launchpad.net/grub-customizer)
+```
+sudo add-apt-repository -y ppa:danielrichter2007/grub-customizer
+sudo apt-get install -y grub-customizer
+```
+
+### [guFw](http://gufw.org/) Firewall
+```
+sudo apt-get install -y gufw
+# OR (If u dont need a GUI program)
+sudo ufw enable
+sudo ufw deny ssh
+```
+
+### Filezilla
+```
+sudo apt-get install -y filezilla
+```
+
+### [HandBrake](https://handbrake.fr/) media convertor
+```
+sudo add-apt-repository -y ppa:stebbins/handbrake-releases
+sudo apt-get install -y handbrake-gtk
+```
+
+### [Selene](https://teejeetech.in/selene/) Media Encoder
+```
+sudo apt-add-repository -y ppa:teejee2008/ppa
+sudo apt-get install -y selene
+```
+
+### [Audio Recorder](https://launchpad.net/~audio-recorder/+archive/ubuntu/ppa)
+```
+sudo add-apt-repository -y ppa:audio-recorder/ppa
+sudo apt-get install -y audio-recorder
+```
+
+### [Submlime text 3](https://www.sublimetext.com/docs/3/linux_repositories.html)
+```
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+sudo apt-get update 
+sudo apt-get install -y sublime-text
+```
+
+### [Virtual Box](https://www.virtualbox.org/wiki/Linux_Downloads)
+```
+sudo apt install virtualbox virtualbox-ext-pack
+```
+
+### gnome disk
+```
+sudo apt-get install -y gnome-disk-utility
+```
+
+### PulseAudio Volume Control
+```
+sudo apt-get install -y pavucontrol
+```
+
+### Update manager (you may not need this)
+```
+sudo apt-get install software-properties-gtk 
+sudo apt-get install update-manager
+```
+
+### Wingpanel addons
+* https://github.com/camellan/placesindicator
+* https://github.com/mdh34/elementary-indicators
+* https://github.com/PlugaruT/wingpanel-indicator-sys-monitor
+* https://github.com/maze-n/indicator-daynight
+* https://github.com/indikeeper/indikeeper
+* https://github.com/ele-l10n-cjk/wingpanel-indicator-inputmethod
+* https://github.com/maze-n/indicator-daynight
